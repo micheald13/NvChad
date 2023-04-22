@@ -12,6 +12,8 @@ local plugins = {
       ensure_installed = {
         "rust-analyzer",
         "clangd",
+        "bash-language-server",
+        "pyright",
       },
     },
   },
