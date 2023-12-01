@@ -1,5 +1,20 @@
 local M = {}
 
+M.dap = {
+  plugin = true,
+  n = {
+    ["<leader>bp"] = { "<cmd> DapToggleBreakpoint <CR>", "toggle breakpoint" },
+    ["<leader>dus"] = {
+      function ()
+        local widgets = require('dap.ui.widgets');
+        local sidebar = widgets.sidebar(widgets.scopes);
+        sidebar.open();
+      end,
+      "Open debugging sidebar"
+    }
+  }
+}
+
 M.abc = {
   n = {
     ["<leader>gg"] = {"<cmd>:LazyGit<CR>", "lazygit"},
