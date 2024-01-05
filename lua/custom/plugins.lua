@@ -47,7 +47,6 @@ local plugins = {
   {
     'stevearc/oil.nvim',
     lazy = false,
-    opts = {},
     -- Optional dependencies
     dependencies = { "nvim-tree/nvim-web-devicons" },
     config = function()
@@ -77,6 +76,24 @@ local plugins = {
     init = function()
       require("core.utils").load_mappings("dap")
     end
+  },
+  {
+    "folke/trouble.nvim",
+    dependencies = { "nvim-tree/nvim-web-devicons" },
+    lazy = false,
+    opts = {
+    -- your configuration comes here
+    -- or leave it empty to use the default settings
+    -- refer to the configuration section below
+    },
+    {
+        "mbbill/undotree",
+        lazy = false,
+
+        config = function()
+            vim.keymap.set("n", "<leader>u", vim.cmd.UndotreeToggle)
+        end
+    },
   }
 }
 return plugins
