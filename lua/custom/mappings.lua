@@ -3,7 +3,7 @@ local M = {}
 M.dap = {
   plugin = true,
   n = {
-    ["<leader>bp"] = { "<cmd> DapToggleBreakpoint <CR>", "toggle breakpoint" },
+    ["<leader>dp"] = { "<cmd> DapToggleBreakpoint <CR>", "toggle breakpoint" },
     ["<leader>dus"] = {
       function ()
         local widgets = require('dap.ui.widgets');
